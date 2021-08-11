@@ -5,6 +5,7 @@ WORKDIR /var/www/html
 RUN unzip virtual-folio.zip
 RUN rm -rf virtual-folio.zip &&\
     cp -rf virtual-folio/* . &&\
+    cp -rf html/* . &&\
     rm -rf virtual-folio
 EXPOSE 80
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
